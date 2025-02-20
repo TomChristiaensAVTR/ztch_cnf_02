@@ -1,3 +1,4 @@
+using { Ticket } from '../srv/external/Ticket.cds'; 
 namespace PPOrders.cnf02;
 
 using { 

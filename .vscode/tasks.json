@@ -1,5 +1,5 @@
 {
-  "version": "2.0.2",
+  "version": "2.0.0",
   "tasks": [
     {
       "label": "kill-cds-processes",
@@ -12,39 +12,6 @@
         "panel": "shared",
         "showReuseMessage": false,
         "clear": false
-      }
-    },
-    {
-      "label": "npm-install",
-      "type": "process",
-      "command": "npm",
-      "args": [
-        "install"
-      ],
-      "dependsOn": [
-        "kill-cds-processes"
-      ],
-      "options": {
-        "cwd": "${workspaceFolder}"
-      }
-    },
-    {
-      "label": "BuildMDK",
-      "type": "process",
-      "command": "npx",
-      "args": [
-        "mdk",
-        "build",
-        "--target",
-        "module",
-        "--ui5",
-        "--recursive"
-      ],
-      "dependsOn": [
-        "npm-install"
-      ],
-      "options": {
-        "cwd": "${workspaceFolder}"
       }
     },
     {
@@ -72,6 +39,66 @@
       "label": "Enable Discovery and Deploy ztch_cnf_02",
       "taskType": "Deploy",
       "enableDiscovery": "true"
+    },
+    {
+      "label": "npm-install",
+      "type": "process",
+      "command": "npm",
+      "args": [
+        "install"
+      ],
+      "dependsOn": [
+        "kill-cds-processes"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}///"
+      }
+    },
+    {
+      "label": "BuildMDK",
+      "type": "process",
+      "command": "npx",
+      "args": [
+        "mdk",
+        "build",
+        "--target",
+        "module",
+        "--ui5",
+        "--recursive"
+      ],
+      "dependsOn": [
+        "npm-install"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}///"
+      }
+    },
+    {
+      "label": "dev-project",
+      "type": "process",
+      "command": "npx",
+      "args": [
+        "dev-cap-tools",
+        "gen-entrypoint"
+      ],
+      "dependsOn": [
+        "BuildMDK"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}///"
+      }
+    },
+    {
+      "type": "build.mta",
+      "label": "Build MTA: ztch_cnf_02 - PT",
+      "taskType": "Build",
+      "projectPath": "/home/user/projects/ztch_cnf_02",
+      "extensions": [],
+      "ui5theme": "sap_horizon",
+      "vendorDependency": false,
+      "buildCodeServicePlan": false,
+      "subdomain": "",
+      "ui5version": "1.133.0"
     }
   ]
 }

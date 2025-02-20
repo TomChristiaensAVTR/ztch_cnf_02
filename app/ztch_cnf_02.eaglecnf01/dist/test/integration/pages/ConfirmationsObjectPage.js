@@ -1,0 +1,2 @@
+sap.ui.define(["sap/fe/test/ObjectPage"],function(t){"use strict";var e={actions:{},assertions:{}};return new t({appId:"ztchcnf02.eaglecnf01",componentId:"ConfirmationsObjectPage",contextPath:"/Confirmations"},e)});
+//# sourceMappingURL=ConfirmationsObjectPage.js.map

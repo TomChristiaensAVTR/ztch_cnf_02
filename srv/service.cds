@@ -1,3 +1,4 @@
+using { Ticket } from './external/Ticket.cds'; 
 using { PPOrders.cnf02 as my } from '../db/schema.cds';
 
 // This was a demo

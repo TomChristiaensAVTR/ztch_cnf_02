@@ -49,6 +49,18 @@
         "[production]": {
           "kind": "xsuaa"
         }
+      },
+      "Ticket": {
+        "kind": "odata-v2",
+        "model": "srv/external/Ticket",
+        "[production]": {
+          "credentials": {
+            "destination": "apihub_sandbox",
+            "path": "sap/c4c/odata/v1/c4codataapi"
+          }
+        },
+        "csrf": true,
+        "csrfInBatch": true
       }
     }
   },

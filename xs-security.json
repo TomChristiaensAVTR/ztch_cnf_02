@@ -1,6 +1,45 @@
 {
-  "scopes": [],
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.admin",
+      "description": "admin"
+    },
+    {
+      "name": "$XSAPPNAME.display",
+      "description": "display"
+    },
+    {
+      "name": "$XSAPPNAME.ItsComplicated",
+      "description": "ItsComplicated"
+    }
+  ],
   "attributes": [],
-  "role-templates": [],
-  "authorities-inheritance": false
+  "role-templates": [
+    {
+      "name": "admin",
+      "description": "generated",
+      "scope-references": [
+        "$XSAPPNAME.admin"
+      ],
+      "attribute-references": []
+    },
+    {
+      "name": "display",
+      "description": "generated",
+      "scope-references": [
+        "$XSAPPNAME.display"
+      ],
+      "attribute-references": []
+    },
+    {
+      "name": "ItsComplicated",
+      "description": "generated",
+      "scope-references": [
+        "$XSAPPNAME.ItsComplicated"
+      ],
+      "attribute-references": []
+    }
+  ],
+  "xsappname": "ztch_cnf_02",
+  "tenant-mode": "dedicated"
 }
