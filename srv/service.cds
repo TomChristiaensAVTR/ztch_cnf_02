@@ -1,5 +1,7 @@
 using { PPOrders.cnf02 as my } from '../db/schema.cds';
 
+// This was a demo
+
 @path : '/service/CnfSrv'
 service CnfSrv
 {
